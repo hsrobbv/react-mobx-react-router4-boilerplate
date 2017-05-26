@@ -27,14 +27,19 @@ module.exports = {
     },
     devtool: "eval",
     module: {
-        rules: [
+        rules: [{
+                test: /\.tsx?$/,
+                loader: 'awesome-typescript-loader'
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loader: "babel-loader",
                 options: {
                     presets: [
-                        ["es2015", {"modules": false}],
+                        ["es2015", {
+                            "modules": false
+                        }],
                         "stage-0",
                         "react"
                     ],
@@ -82,10 +87,21 @@ module.exports = {
             }
         ]
     },
+    resolve: {
+        extensions: [
+            '.js',
+            '.jsx',
+            '.ts',
+            '.tsx'
+        ]
+    }
     plugins: [
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({ hash: false, template: "./index.hbs" }),
+        new HtmlWebpackPlugin({
+            hash: false,
+            template: "./index.hbs"
+        }),
         new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /nb/)
     ]
 };

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { Match, Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ import DataWrapper from "./DataWrapper";
 @Protected
 @DataWrapper
 @observer
-export default class SubPage extends Component {
+export default class SubPage extends React.Component<any, {}> {
 	constructor(props) {
 		super(props);
 		this.store = this.props.store;

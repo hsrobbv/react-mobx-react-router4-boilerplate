@@ -1,5 +1,5 @@
-import("./styles/main.scss");
-import React from "react";
+require("./styles/main.scss");
+import * as React from "react";
 import { render } from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Provider } from "mobx-react";

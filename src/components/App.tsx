@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { Route, Link } from "react-router-dom";
 import { inject, observer } from "mobx-react";
 import LazyRoute from "lazy-route";
@@ -8,7 +8,7 @@ import TopBar from "./TopBar";
 
 @inject("store")
 @observer
-export default class App extends Component {
+export default class App extends React.Component<any, {}> {
 	constructor(props) {
 		super(props);
 		this.store = this.props.store;

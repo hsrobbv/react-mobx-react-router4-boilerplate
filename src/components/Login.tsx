@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { Redirect } from "react-router-dom";
 
 @inject("store")
 @observer
-export default class Login extends Component {
+export default class Login extends React.Component<any, {}> {
 	render() {
 		return (
 			<div className="page login">

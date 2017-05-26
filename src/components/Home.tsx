@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { inject, observer } from "mobx-react";
 
 @inject("store")
 @observer
-export default class Home extends Component {
+export default class Home extends React.Component<any, {}> {
 	constructor(props) {
 		super(props);
 		this.store = this.props.store;

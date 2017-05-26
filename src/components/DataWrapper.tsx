@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { Redirect } from "react-router-dom";
 
 export default function DataWrapper(Component) {
 	@inject("store")
 	@observer
-	class DataFetcher extends Component {
+	class DataFetcher extends React.Component<any, {}> {
 		constructor(props) {
 			super(props);
 			this.store = this.props.store.appState;

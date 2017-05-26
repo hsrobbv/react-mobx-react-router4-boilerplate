@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 import { inject, observer } from "mobx-react";
 import { Link, withRouter } from "react-router-dom";
 
@@ -8,7 +8,7 @@ import Button from "./ui/Button";
 @withRouter
 @inject("store")
 @observer
-export default class TopBar extends Component {
+export default class TopBar extends React.Component<any, {}> {
 	constructor(props) {
 		super(props);
 		this.store = this.props.store.appState;
